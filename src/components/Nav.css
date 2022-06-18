@@ -1,0 +1,37 @@
+:root{
+    --darkBlue:#071a2f;
+    --blue:#001e3c;
+    --lightBlue:#3399ff;
+    --white:#ffffff;
+}
+
+
+nav{
+    height:12vh;
+    background-color:var(--darkBlue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 2rem 1rem 2rem;
+    color:var(--lightBlue)
+}
+
+.links__container{
+    width:30%;
+}
+
+.nav__links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav__links li{
+    list-style: none;
+}
+.link{
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
+    border:none;
+    color:var(--lightBlue);
+}

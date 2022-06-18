@@ -1,0 +1,23 @@
+:root{
+    --darkBlue:#071a2f;
+    --blue:#001e3c;
+    --lightBlue:#3399ff;
+    --white:#ffffff;
+}
+
+
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+
+.home__container{
+    background-color:var(--blue) ;
+    
+}
+
+.home__title{
+color: var(--white);
+}
