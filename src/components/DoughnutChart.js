@@ -48,7 +48,7 @@ const DoughnutChart = ({ topCryptos }) => {
           color: "#001e3c",
           fontColor: "#001e3c",
           fontSize: 18,
-          stepSize: 0.1,
+          stepSize: 0.5,
           beginAtZero: true,
         },
       },
@@ -66,7 +66,7 @@ const DoughnutChart = ({ topCryptos }) => {
 
   return (
     <div>
-      <Line height={400} data={data} options={options} />
+      <Line height={600} data={data} options={options} />
     </div>
   );
 };

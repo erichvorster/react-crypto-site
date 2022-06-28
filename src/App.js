@@ -14,8 +14,9 @@ function App() {
   const [cryptoNews, setCryptoNews] = useState([]);
   const [allCryptos, setAllCryptos] = useState([]);
 
-  console.log(topCryptos);
+  console.log(allCryptos);
 
+  //TopCryptos
   useEffect(() => {
     const options = {
       method: "GET",
@@ -33,6 +34,7 @@ function App() {
       .then((response) => setTopCryptos(response.data.coins));
   }, []);
 
+  //All Cryptos
   useEffect(() => {
     const options = {
       method: "GET",
@@ -50,6 +52,7 @@ function App() {
       .then((response) => setAllCryptos(response.data.coins));
   }, []);
 
+  //CryptoNews
   useEffect(() => {
     const options = {
       method: "GET",
@@ -92,7 +95,10 @@ function App() {
       <Router>
         <Nav />
         <Routes>
-          <Route path="/" element={<Homes topCryptos={topCryptos} />} />
+          <Route
+            path="/"
+            element={<Homes topCryptos={topCryptos} cryptoNews={cryptoNews} />}
+          />
           <Route
             path="/prices"
             element={
