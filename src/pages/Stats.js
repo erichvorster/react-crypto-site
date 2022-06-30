@@ -56,9 +56,7 @@ const Stats = ({ topCryptos }) => {
                 ></Box>
                 {topCryptos[0]?.name}
               </Typography>
-              <Box sx={{}}>
-                <DoughnutChart topCryptos={topCryptos} />
-              </Box>
+              <Box sx={{}}>hello</Box>
             </Box>
           </Grid>
         </Grid>
@@ -124,11 +122,19 @@ const Stats = ({ topCryptos }) => {
         </Box>
       </Box>
 
-      <Box>
-        <Grid container spacing={2}>
-          <Grid item xs={3}>
-            <PriceCard topCryptos={topCryptos} />
-          </Grid>
+      <Box
+        sx={{
+          backgroundColor: "var(--blue)",
+        }}
+      >
+        <Grid container spacing={2} sx={{ justifyContent: "center" }}>
+          {topCryptos.map((crypto) => {
+            return (
+              <Grid item xs={3}>
+                <PriceCard crypto={crypto} />
+              </Grid>
+            );
+          })}
         </Grid>
       </Box>
     </>

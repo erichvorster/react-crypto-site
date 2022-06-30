@@ -1,19 +1,20 @@
 import React from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const LineChart = ({ topCryptos }) => {
-  console.log(topCryptos);
+const LineChart = ({ coinInfo }) => {
+  console.log(coinInfo);
 
   var data = {
-    labels: topCryptos.map((coin) => coin.name),
+    labels: coinInfo?.name,
     datasets: [
       {
         label: "# of Votes",
-        data: topCryptos.map((coin) => coin.marketCap),
-        backgroundColor: topCryptos.map((coin) => coin.color),
-        borderColor: topCryptos.map((coin) => coin.color),
+        data: coinInfo?.sparkline,
+        backgroundColor: coinInfo?.sparkline,
+        borderColor: coinInfo?.sparkline,
         borderWidth: 1,
       },
     ],

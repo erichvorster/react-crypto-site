@@ -21,7 +21,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": "",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -39,7 +39,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": "",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -107,7 +107,7 @@ function App() {
           />
           <Route path="/stats" element={<Stats topCryptos={topCryptos} />} />
           <Route path="/news" element={<News cryptoNews={cryptoNews} />} />
-          <Route path="/crypto/:coinid" element={<CryptoInfo />} />
+          <Route path="/crypto/:coinId" element={<CryptoInfo />} />
         </Routes>
       </Router>
     </>

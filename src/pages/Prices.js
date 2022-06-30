@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import HTMLReactParser from "html-react-parser";
 import CryptoCard from "../components/CryptoCard";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -22,7 +23,7 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
       <Box
         component="form"
         sx={{
-          backgroundColor: "var(--blue)",
+          backgroundColor: "var(--white)",
           display: "flex",
           justifyContent: "center",
           paddingTop: 10,
@@ -53,7 +54,11 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
           {cryptoList.map((crypto) => {
             return (
               <Grid item md={4} lg={4} xl={3}>
-                <Link key={crypto.uuid} to={`/crypto/${crypto.uuid}`}>
+                <Link
+                  key={crypto.uuid}
+                  to={`/crypto/${crypto.uuid}`}
+                  style={{ textDecoration: "none" }}
+                >
                   <CryptoCard crypto={crypto} />
                 </Link>
               </Grid>

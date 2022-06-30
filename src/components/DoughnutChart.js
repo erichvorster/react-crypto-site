@@ -10,7 +10,7 @@ import { Line } from "react-chartjs-2";
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
-const DoughnutChart = ({ topCryptos }) => {
+const DoughnutChart = ({ coinInfo }) => {
   var data = {
     labels: [
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -18,10 +18,10 @@ const DoughnutChart = ({ topCryptos }) => {
     ],
     datasets: [
       {
-        label: topCryptos[0]?.sparkline,
-        data: topCryptos[0]?.sparkline,
-        backgroundColor: topCryptos[0]?.color,
-        borderColor: topCryptos[0]?.color,
+        label: coinInfo?.sparkline,
+        data: coinInfo?.sparkline,
+        backgroundColor: coinInfo?.color,
+        borderColor: coinInfo?.color,
         borderWidth: 1,
       },
     ],
@@ -29,6 +29,8 @@ const DoughnutChart = ({ topCryptos }) => {
 
   var options = {
     maintainAspectRatio: false,
+    responsive: true,
+    aspectRatio: 2,
     scales: {
       y: {
         beginAtZero: true,
@@ -66,7 +68,7 @@ const DoughnutChart = ({ topCryptos }) => {
 
   return (
     <div>
-      <Line height={600} data={data} options={options} />
+      <Line height={400} data={data} options={options} />
     </div>
   );
 };

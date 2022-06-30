@@ -9,24 +9,25 @@ import { green, red } from "@mui/material/colors";
 import { Box } from "@mui/material";
 import "./CryptoCard.css";
 import { createTheme } from "@mui/material/styles";
+import millify from "millify";
 
 function CryptoCard({ crypto }) {
   return (
     <Card sx={{ maxWidth: 400, minWidth: 270 }}>
       <CardHeader
+        variant="h5"
         avatar={<Avatar src={crypto?.iconUrl}></Avatar>}
         title={crypto?.name}
       />
-
-      <CardContent>
+      <CardContent sx={{}}>
         <Typography variant="body2" color="text.secondary">
-          Price: {(Math.round(crypto.price * 100) / 100).toFixed(2)}
+          Price: {millify(crypto.price)}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Market Cap:{crypto.marketCap}
+          Market Cap:{millify(crypto.marketCap)}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Daily Change:{crypto.change}
+          Daily Change:{millify(crypto.change)}
         </Typography>
       </CardContent>
     </Card>
