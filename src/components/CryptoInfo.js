@@ -15,6 +15,10 @@ import Divider from '@mui/material/Divider';
 import ListItemButton from '@mui/material/ListItemButton';
 import HTMLReactParser from 'html-react-parser';
 import DoughnutChart from './DoughnutChart';
+import {Link} from 'react-router-dom'
+import {Button} from '@mui/material';
+
+
 
 const CryptoInfo = () => {
   const {coinId} = useParams()
@@ -34,7 +38,7 @@ const CryptoInfo = () => {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e',
+        'X-RapidAPI-Key': '',
         'X-RapidAPI-Host': 'coinranking1.p.rapidapi.com'
       }
     };
@@ -64,7 +68,9 @@ const CryptoInfo = () => {
   ];
 
   return (
-    <Box sx={{backgroundColor:"var(--blue)", display:"flex", alignItems:"center" , flexDirection:"column", paddingBottom:10, paddingLeft:2}}>
+    <Box sx={{backgroundColor:"var(--blue)", paddingBottom:10, paddingLeft:2}}>
+      
+      
     <Box sx={{backgroundColor:"var(--blue)", maxWidth:1200, margin:"0 auto"}} >
     <Box sx={{
           display:'flex',
@@ -80,12 +86,14 @@ const CryptoInfo = () => {
 }}>
           <Typography variant="h3" sx={{color:`${coinInfo?.color}`}}>{coinInfo?.name}</Typography>
           <Typography variant="body1">{coinInfo?.name} price live in US Dollar</Typography>
+          <Button variant="outlined"><Link to="/prices">Back to coins</Link></Button>
           </Box>
           <Box component="img" sx={{height:60, width:60, marginLeft:2}} src={coinInfo?.iconUrl}></Box>
         </Box>
 
 <Grid container spacing={2} sx={{paddingTop:8, gridGap:15, justifyContent:"center"}}>
   <Grid item xs={11} md={6} sx={{border:"2px solid var(--darkBlue)", borderRadius:2,  padding:5, backgroundColor:"var(--white)"}}>
+
   <Box sx={{ maxWidth: 150 }}>
       <FormControl fullWidth >
         <InputLabel id="demo-simple-select-label">Time period</InputLabel>

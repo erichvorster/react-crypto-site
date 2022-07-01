@@ -10,13 +10,15 @@ import PieChart from "../components/PieChart";
 import "./Stats.css";
 import TopPerformers from "../components/TopPerformers";
 import PriceCard from "../components/PriceCard";
+import stats from "../Assets/stats.svg";
+import { Link } from "react-router-dom";
 
 const Stats = ({ topCryptos }) => {
   return (
     <>
       <Box sx={{ backgroundColor: "var(--blue)" }}>
         <Grid container spacing={2}>
-          <Grid item xs={5}>
+          <Grid item xs={7}>
             <Box pl={20} sx={{ color: "var(--white)" }}>
               <Typography
                 variant="h3"
@@ -25,38 +27,23 @@ const Stats = ({ topCryptos }) => {
                 pb={2}
                 className="home__title"
               >
-                All the relevant crypto news updated live.
+                Crypto statistics to help you gain the upper hand.
               </Typography>
               <Typography variant="body1" pb={2} sx={{ maxWidth: 600 }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                 neque alias omnis fugit sed aperiam ipsa delectus dolorem
                 incidunt quos?
               </Typography>
-              <Button size="large" sx={{ mr: 2 }} variant="contained">
-                Pricing
-              </Button>
-              <Button size="large" variant="outlined">
-                News
-              </Button>
+              <Link to="/prices">
+                <Button size="large" sx={{ mr: 2 }} variant="contained">
+                  Search all coins
+                </Button>
+              </Link>
             </Box>
           </Grid>
-          <Grid item xs={7}>
-            <Box
-              sx={{
-                paddingTop: 10,
-                paddingBottom: 10,
-                paddingRight: 20,
-              }}
-            >
-              <Typography variant="h4">
-                <Box
-                  component="img"
-                  sx={{ height: 25, width: 25 }}
-                  src={topCryptos[0]?.iconUrl}
-                ></Box>
-                {topCryptos[0]?.name}
-              </Typography>
-              <Box sx={{}}>hello</Box>
+          <Grid item xs={5}>
+            <Box sx={{ padding: 10 }}>
+              <Box component="img" src={stats} sx={{ maxWidth: 300 }}></Box>
             </Box>
           </Grid>
         </Grid>

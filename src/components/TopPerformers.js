@@ -7,6 +7,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Box } from "@mui/material";
+import millify from "millify";
+import { Link } from "react-router-dom";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -22,7 +24,7 @@ const rows = [
 
 function TopPerformers({ topCryptos }) {
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ maxWidth: 900, minWidth: 700 }}>
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -31,6 +33,7 @@ function TopPerformers({ topCryptos }) {
             <TableCell align="right">Name</TableCell>
             <TableCell align="right">Price</TableCell>
             <TableCell align="right">Symbol</TableCell>
+            <TableCell align="right">Change</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,6 +42,7 @@ function TopPerformers({ topCryptos }) {
               key={crypto.uuid}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
+              <Link key={crypto.uuid} to={`/crypto/${crypto.uuid}`}></Link>
               <TableCell component="th" scope="row">
                 {crypto.rank}
               </TableCell>
@@ -52,11 +56,10 @@ function TopPerformers({ topCryptos }) {
                   src={crypto.iconUrl}
                 ></Box>
               </TableCell>
-              <TableCell align="right">{crypto.name}</TableCell>
-              <TableCell align="right">
-                {(Math.round(crypto.price * 100) / 100).toFixed(2)}
-              </TableCell>
-              <TableCell align="right">{crypto.symbol}</TableCell>
+              <TableCell align="right">{crypto?.name}</TableCell>
+              <TableCell align="right">{millify(crypto?.price)}</TableCell>
+              <TableCell align="right">{crypto?.symbol}</TableCell>
+              <TableCell align="right">{crypto?.change}</TableCell>
             </TableRow>
           ))}
         </TableBody>

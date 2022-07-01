@@ -21,7 +21,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -76,7 +76,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": "",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };

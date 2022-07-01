@@ -6,6 +6,13 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
+import { Typography } from "@mui/material";
+import shiba from "../Assets/shiba.svg";
+import ethereum from "../Assets/ethereum.svg";
+import tether from "../Assets/tether.svg";
+import xrp from "../Assets/xrp.svg";
+import bitcoin from "../Assets/bitcoin.svg";
+import inch from "../Assets/1inch.svg";
 
 const Prices = ({ allCryptos, setAllCryptos }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -23,28 +30,56 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
       <Box
         component="form"
         sx={{
-          backgroundColor: "var(--white)",
+          backgroundColor: "var(--darkBlue)",
           display: "flex",
           justifyContent: "center",
-          paddingTop: 10,
           "& > :not(style)": { m: 1, width: "60ch" },
+          position: "relative",
+          paddingTop: 8,
         }}
         noValidate
         autoComplete="off"
       >
+        <Box component="img" src={shiba} sx={{ position: "absolute" }} />
+        <Box
+          sx={{
+            textAlign: "center",
+            paddingBottom: 8,
+            color: "var(--white)",
+            paddingLeft: 2,
+            paddingRight: 2,
+          }}
+        >
+          <Typography variant="h4" sx={{ paddingBottom: 2, fontWeight: 600 }}>
+            Search all the crypto coins and get all the latest statistics
+          </Typography>
+          <Typography variant="body1" sx={{ paddingBottom: 2 }}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </Typography>
+        </Box>
         <TextField
           onChange={(e) => setSearchTerm(e.target.value)}
           id="outlined-basic"
           label=" Search Cryptocurrency"
           variant="outlined"
+          sx={{
+            position: "absolute",
+            top: { xs: 335, sm: 270 },
+            backgroundColor: "var(--white)",
+            borderRadius: 1,
+            zIndex: 10,
+            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+            maxWidth: { xs: 400, sm: 700, md: 1000 },
+          }}
         />
       </Box>
       <Box
         sx={{
-          backgroundColor: "var(--blue)",
+          backgroundColor: "var(--white)",
           display: "flex",
           justifyContent: "center",
-          paddingTop: 5,
+          paddingTop: 10,
           paddingLeft: { sm: 5, lg: 10 },
           paddingRight: { sm: 5, lg: 10 },
           minHeight: "100vh",
