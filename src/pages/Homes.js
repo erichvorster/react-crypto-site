@@ -12,6 +12,7 @@ import LineChart from "../components/LineChart";
 import DoughnutChart from "../components/DoughnutChart";
 import PieChart from "../components/PieChart";
 import NewsCard from "../components/NewsCard";
+import { Link } from "react-router-dom";
 
 const Homes = ({ topCryptos, cryptoNews }) => {
   console.log(cryptoNews);
@@ -208,12 +209,11 @@ const Homes = ({ topCryptos, cryptoNews }) => {
                   neque alias omnis fugit sed aperiam ipsa delectus dolorem
                   incidunt quos?
                 </Typography>
-                <Button size="large" sx={{ mr: 2 }} variant="contained">
-                  Pricing
-                </Button>
-                <Button size="large" variant="outlined">
-                  News
-                </Button>
+                <Link to="/news">
+                  <Button size="large" variant="outlined">
+                    All News
+                  </Button>
+                </Link>
               </Box>
             </Grid>
 
@@ -230,7 +230,7 @@ const Homes = ({ topCryptos, cryptoNews }) => {
         </Box>
       </div>
 
-      <Box container sx={{ backgroundColor: "var(--blue)" }}>
+      {/* <Box container sx={{ backgroundColor: "var(--blue)" }}>
         <BarChart topCryptos={topCryptos} />
       </Box>
       <Box sx={{ backgroundColor: "var(--blue)" }}>
@@ -241,7 +241,7 @@ const Homes = ({ topCryptos, cryptoNews }) => {
       </Box>
       <Box sx={{ backgroundColor: "var(--blue)" }}>
         <PieChart topCryptos={topCryptos} />
-      </Box>
+      </Box> */}
     </>
   );
 };

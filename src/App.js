@@ -13,8 +13,7 @@ function App() {
   const [topCryptos, setTopCryptos] = useState([]);
   const [cryptoNews, setCryptoNews] = useState([]);
   const [allCryptos, setAllCryptos] = useState([]);
-
-  console.log(allCryptos);
+  const [globalStats, setGlobalStats] = useState([]);
 
   //TopCryptos
   useEffect(() => {
@@ -39,7 +38,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -88,7 +87,27 @@ function App() {
       .then((response) => response.json())
       .then((response) => console.log(response))
       .catch((err) => console.error(err));
-  });
+  }, []);
+
+  useEffect(() => {
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+      },
+    };
+
+    fetch(
+      "https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setGlobalStats(response))
+      .catch((err) => console.error(err));
+  }, []);
+
+  console.log(topCryptos);
 
   return (
     <>
@@ -105,7 +124,12 @@ function App() {
               <Prices allCryptos={allCryptos} setAllCryptos={setAllCryptos} />
             }
           />
-          <Route path="/stats" element={<Stats topCryptos={topCryptos} />} />
+          <Route
+            path="/stats"
+            element={
+              <Stats topCryptos={topCryptos} globalStats={globalStats} />
+            }
+          />
           <Route path="/news" element={<News cryptoNews={cryptoNews} />} />
           <Route path="/crypto/:coinId" element={<CryptoInfo />} />
         </Routes>

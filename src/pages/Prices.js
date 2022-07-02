@@ -7,12 +7,12 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";
 import { Typography } from "@mui/material";
-import shiba from "../Assets/shiba.svg";
-import ethereum from "../Assets/ethereum.svg";
-import tether from "../Assets/tether.svg";
-import xrp from "../Assets/xrp.svg";
-import bitcoin from "../Assets/bitcoin.svg";
-import inch from "../Assets/1inch.svg";
+// import shiba from "../Assets/shiba.svg";
+// import ethereum from "../Assets/ethereum.svg";
+// import tether from "../Assets/tether.svg";
+// import xrp from "../Assets/xrp.svg";
+// import bitcoin from "../Assets/bitcoin.svg";
+// import inch from "../Assets/1inch.svg";
 
 const Prices = ({ allCryptos, setAllCryptos }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,7 +40,7 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
         noValidate
         autoComplete="off"
       >
-        <Box component="img" src={shiba} sx={{ position: "absolute" }} />
+        {/* <Box component="img" src={shiba} sx={{ position: "absolute" }} /> */}
         <Box
           sx={{
             textAlign: "center",

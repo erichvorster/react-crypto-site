@@ -9,7 +9,7 @@ import Typography from "@mui/material/Typography";
 const PriceCard = ({ crypto }) => {
   console.log(crypto);
   return (
-    <Card sx={{ maxWidth: 400, minWidth: 270 }}>
+    <Card sx={{ maxWidth: 300, minWidth: 200 }}>
       <CardHeader
         avatar={<Avatar src={crypto?.iconUrl}></Avatar>}
         title={crypto?.name}
