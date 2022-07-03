@@ -2,11 +2,13 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import Homes from "./pages/Homes";
 import News from "./pages/News";
-import Prices from "./pages/Prices";
+import Coins from "./pages/Coins";
 import Nav from "./components/Nav";
 import Stats from "./pages/Stats";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CryptoInfo from "./components/CryptoInfo";
+import Subscribe from "./pages/Subscribe";
+import Footer from "./components/Footer";
 
 //Fetching Crypto coins
 function App() {
@@ -14,6 +16,7 @@ function App() {
   const [cryptoNews, setCryptoNews] = useState([]);
   const [allCryptos, setAllCryptos] = useState([]);
   const [globalStats, setGlobalStats] = useState([]);
+  const [topFive, setTopFive] = useState([]);
 
   //TopCryptos
   useEffect(() => {
@@ -30,7 +33,10 @@ function App() {
       options
     )
       .then((response) => response.json())
-      .then((response) => setTopCryptos(response.data.coins));
+      .then((response) => {
+        setTopCryptos(response.data.coins);
+        setTopFive(response.data.coins.splice(0, 3));
+      });
   }, []);
 
   //All Cryptos
@@ -57,7 +63,7 @@ function App() {
       method: "GET",
       headers: {
         "X-BingApis-SDK": "true",
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
         "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
       },
     };
@@ -75,7 +81,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -93,7 +99,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -107,8 +113,6 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
-  console.log(topCryptos);
-
   return (
     <>
       <Router>
@@ -116,12 +120,19 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Homes topCryptos={topCryptos} cryptoNews={cryptoNews} />}
+            element={
+              <Homes
+                topCryptos={topCryptos}
+                cryptoNews={cryptoNews}
+                globalStats={globalStats}
+                topFive={topFive}
+              />
+            }
           />
           <Route
-            path="/prices"
+            path="/coins"
             element={
-              <Prices allCryptos={allCryptos} setAllCryptos={setAllCryptos} />
+              <Coins allCryptos={allCryptos} setAllCryptos={setAllCryptos} />
             }
           />
           <Route
@@ -132,7 +143,9 @@ function App() {
           />
           <Route path="/news" element={<News cryptoNews={cryptoNews} />} />
           <Route path="/crypto/:coinId" element={<CryptoInfo />} />
+          <Route path="/subscribe" element={<Subscribe />} />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

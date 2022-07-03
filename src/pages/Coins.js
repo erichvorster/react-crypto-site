@@ -14,7 +14,7 @@ import { Typography } from "@mui/material";
 // import bitcoin from "../Assets/bitcoin.svg";
 // import inch from "../Assets/1inch.svg";
 
-const Prices = ({ allCryptos, setAllCryptos }) => {
+const Coins = ({ allCryptos, setAllCryptos }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [cryptoList, setCryptoList] = useState(allCryptos);
 
@@ -40,7 +40,7 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
         noValidate
         autoComplete="off"
       >
-        {/* <Box component="img" src={shiba} sx={{ position: "absolute" }} /> */}
+        {/* <Box component="img" src={shiba}></Box> */}
         <Box
           sx={{
             textAlign: "center",
@@ -53,7 +53,10 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
           <Typography variant="h4" sx={{ paddingBottom: 2, fontWeight: 600 }}>
             Search all the crypto coins and get all the latest statistics
           </Typography>
-          <Typography variant="body1" sx={{ paddingBottom: 2 }}>
+          <Typography
+            variant="body1"
+            sx={{ paddingBottom: 2, color: "var(--lightBlue)" }}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
           </Typography>
@@ -68,7 +71,7 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
             top: { xs: 335, sm: 270 },
             backgroundColor: "var(--white)",
             borderRadius: 1,
-            zIndex: 10,
+            zIndex: 1,
             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
             maxWidth: { xs: 400, sm: 700, md: 1000 },
           }}
@@ -105,4 +108,4 @@ const Prices = ({ allCryptos, setAllCryptos }) => {
   );
 };
 
-export default Prices;
+export default Coins;

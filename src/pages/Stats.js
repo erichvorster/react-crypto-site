@@ -32,7 +32,7 @@ const Stats = ({ topCryptos, globalStats }) => {
   return (
     
     <Box sx={{ margin:"0 auto"}}>
-      <Box sx={{ backgroundColor: "var(--blue)" }}>
+      <Box sx={{ backgroundColor: "var(--darkBlue)" }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={7}>
             <Box sx={{ color: "var(--white)", paddingLeft:{xs:4, md:12, lg:18}, paddingRight:4, textAlign:{xs:"center", md:"start"}}}>
@@ -45,7 +45,7 @@ const Stats = ({ topCryptos, globalStats }) => {
               >
                 Crypto statistics to help you gain the upper hand.
               </Typography>
-              <Typography variant="body1" pb={2} sx={{ maxWidth: 600 }}>
+              <Typography variant="body1" pb={2} sx={{ maxWidth: 600, color:"var(--lightBlue)" }}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
                 neque alias omnis fugit sed aperiam ipsa delectus dolorem
                 incidunt quos?

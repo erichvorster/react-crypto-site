@@ -46,7 +46,7 @@ const CryptoInfo = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "",
+        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -124,11 +124,15 @@ const CryptoInfo = () => {
 
   return (
     <Box
-      sx={{ backgroundColor: "var(--blue)", paddingBottom: 10, paddingLeft: 2 }}
+      sx={{
+        backgroundColor: "var(--darkBlue)",
+        paddingBottom: 10,
+        paddingLeft: 2,
+      }}
     >
       <Box
         sx={{
-          backgroundColor: "var(--blue)",
+          backgroundColor: "var(--darkBlue)",
           maxWidth: 1200,
           margin: "0 auto",
         }}
