@@ -7,36 +7,6 @@ import "./Nav.css";
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
   return (
-    // <nav>
-    //   <div className="nav__logo">
-    //     <h1>Crypti</h1>
-    //   </div>
-    //   <div className="links__container">
-    //     <ul className="nav__links">
-    //       <li>
-    //         <Link className="link" to="/">
-    //           Home
-    //         </Link>
-    //       </li>
-    //       <li>
-    //         <Link className="link" to="/prices">
-    //           Prices
-    //         </Link>
-    //       </li>
-    //       <li>
-    //         <Link className="link" to="/stats">
-    //           Stats
-    //         </Link>
-    //       </li>
-    //       <li>
-    //         <Link className="link" to="/news">
-    //           News
-    //         </Link>
-    //       </li>
-    //     </ul>
-    //   </div>
-    // </nav>
-
     <nav className="navbar">
       <div className="container-fluid">
         <div className="logo">
@@ -84,6 +54,7 @@ const Nav = () => {
               className="link subscribe"
               to="/subscribe"
               onClick={() => setNavOpen(false)}
+              style={{ textDecoration: "none" }}
             >
               <Button
                 variant="contained"

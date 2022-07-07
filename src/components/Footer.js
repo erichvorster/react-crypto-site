@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { Link } from "@mui/material";
+import { Link } from "react-router-dom";
 import { TwitterOutlined } from "@ant-design/icons";
 import { InstagramOutlined } from "@ant-design/icons";
 import { FacebookOutlined } from "@ant-design/icons";
@@ -14,7 +14,7 @@ const Footer = () => {
           height: "20vh",
           display: "flex",
           justifyContent: "space-around",
-          backgroundColor: "var(--lightBlue)",
+          backgroundColor: "var(--blue)",
           alignItems: "center",
         }}
       >
@@ -22,18 +22,69 @@ const Footer = () => {
         <Box
           sx={{ width: "30%", display: "flex", justifyContent: "space-around" }}
         >
-          <Link to="/">Home</Link>
-          <Link to="/coins">Coins</Link>
-          <Link to="/stats">Stats</Link>
-          <Link to="/news">News</Link>
-          <Link to="/subscribe">Subscribe</Link>
+          <Link
+            className="link switch"
+            to="/"
+            style={{ textDecoration: "none" }}
+          >
+            Home
+          </Link>
+          <Link
+            className="link switch"
+            to="/coins"
+            style={{ textDecoration: "none" }}
+          >
+            Coins
+          </Link>
+          <Link
+            className="link switch"
+            to="/stats"
+            style={{ textDecoration: "none" }}
+          >
+            Stats
+          </Link>
+          <Link
+            className="link switch"
+            to="/news"
+            style={{ textDecoration: "none" }}
+          >
+            News
+          </Link>
+          <Link
+            className="link switch"
+            to="/subscribe"
+            style={{ textDecoration: "none" }}
+          >
+            Subscribe
+          </Link>
         </Box>
         <Box
           sx={{ width: "5%", display: "flex", justifyContent: "space-around" }}
         >
-          <TwitterOutlined />
-          <InstagramOutlined />
-          <FacebookOutlined />
+          <TwitterOutlined
+            style={{
+              fontSize: "32px",
+              color: "var(--lightBlue)",
+              paddingRight: 8,
+              cursor: "pointer",
+            }}
+          />
+          <InstagramOutlined
+            style={{
+              fontSize: "32px",
+              color: "var(--lightBlue)",
+              paddingRight: 8,
+              cursor: "pointer",
+            }}
+          />
+          <FacebookOutlined
+            style={{
+              fontSize: "32px",
+              color: "var(--lightBlue)",
+              paddingRight: 8,
+              cursor: "pointer",
+            }}
+          />
         </Box>
       </Box>
     </>

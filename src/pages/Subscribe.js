@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 const Subscribe = () => {
   return (
     <>
-      <Box sx={{ height: "80vh" }}>
+      <Box sx={{}}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} sx={{ height: "100%" }}>
             <Box
@@ -64,7 +64,6 @@ const Subscribe = () => {
             xs={12}
             md={6}
             sx={{
-              height: "100%",
               backgroundColor: "var(--darkBlue)",
               display: "flex",
               justifyContent: "center",

@@ -24,7 +24,10 @@ const rows = [
 
 function TopPerformers({ topCryptos }) {
   return (
-    <TableContainer component={Paper} sx={{ maxWidth: 700, minWidth: 300 }}>
+    <TableContainer
+      component={Paper}
+      sx={{ maxWidth: { xs: 450, sm: 600, md: 700, lg: 900 } }}
+    >
       <Table aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -37,7 +40,7 @@ function TopPerformers({ topCryptos }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {topCryptos.slice(0, 10).map((crypto) => (
+          {topCryptos.map((crypto) => (
             <TableRow
               key={crypto.uuid}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}

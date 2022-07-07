@@ -29,6 +29,7 @@ const PieChart = ({ topCryptos }) => {
     legend: {
       labels: {
         fontSize: 26,
+        color: "var(--blue)",
       },
     },
   };

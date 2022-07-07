@@ -56,7 +56,7 @@ const CryptoInfo = () => {
       options
     )
       .then((response) => response.json())
-      .then((response) => setCoinInfo(response.data.coin))
+      .then((response) => setCoinInfo(response?.data?.coin))
       .catch((err) => console.error(err));
   }, [timePeriod]);
 
@@ -173,7 +173,7 @@ const CryptoInfo = () => {
         >
           <Grid item xs={12} sx={{ marginLeft: 4 }}>
             <Button variant="outlined">
-              <Link to="/prices">
+              <Link to="/coins">
                 <Typography
                   variant="body1"
                   sx={{ textDecoration: "none", color: "var(--lightBlue)" }}
@@ -219,7 +219,7 @@ const CryptoInfo = () => {
               </FormControl>
             </Box>
             <Box sx={{ maxWidth: 800 }}>
-              <DoughnutChart coinInfo={coinInfo} />
+              <DoughnutChart topCryptos={coinInfo} />
             </Box>
           </Grid>
 

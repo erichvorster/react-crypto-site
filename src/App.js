@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CryptoInfo from "./components/CryptoInfo";
 import Subscribe from "./pages/Subscribe";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 //Fetching Crypto coins
 function App() {
@@ -17,6 +18,8 @@ function App() {
   const [allCryptos, setAllCryptos] = useState([]);
   const [globalStats, setGlobalStats] = useState([]);
   const [topFive, setTopFive] = useState([]);
+
+  console.log(topCryptos);
 
   //TopCryptos
   useEffect(() => {
@@ -35,7 +38,7 @@ function App() {
       .then((response) => response.json())
       .then((response) => {
         setTopCryptos(response.data.coins);
-        setTopFive(response.data.coins.splice(0, 3));
+        setTopFive(response.data.coins.slice(0, 3));
       });
   }, []);
 
@@ -117,34 +120,36 @@ function App() {
     <>
       <Router>
         <Nav />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <Homes
-                topCryptos={topCryptos}
-                cryptoNews={cryptoNews}
-                globalStats={globalStats}
-                topFive={topFive}
-              />
-            }
-          />
-          <Route
-            path="/coins"
-            element={
-              <Coins allCryptos={allCryptos} setAllCryptos={setAllCryptos} />
-            }
-          />
-          <Route
-            path="/stats"
-            element={
-              <Stats topCryptos={topCryptos} globalStats={globalStats} />
-            }
-          />
-          <Route path="/news" element={<News cryptoNews={cryptoNews} />} />
-          <Route path="/crypto/:coinId" element={<CryptoInfo />} />
-          <Route path="/subscribe" element={<Subscribe />} />
-        </Routes>
+        <ScrollToTop>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Homes
+                  topCryptos={topCryptos}
+                  cryptoNews={cryptoNews}
+                  globalStats={globalStats}
+                  topFive={topFive}
+                />
+              }
+            />
+            <Route
+              path="/coins"
+              element={
+                <Coins allCryptos={allCryptos} setAllCryptos={setAllCryptos} />
+              }
+            />
+            <Route
+              path="/stats"
+              element={
+                <Stats topCryptos={topCryptos} globalStats={globalStats} />
+              }
+            />
+            <Route path="/news" element={<News cryptoNews={cryptoNews} />} />
+            <Route path="/crypto/:coinId" element={<CryptoInfo />} />
+            <Route path="/subscribe" element={<Subscribe />} />
+          </Routes>
+        </ScrollToTop>
         <Footer />
       </Router>
     </>

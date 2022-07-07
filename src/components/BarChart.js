@@ -14,8 +14,8 @@ const BarChart = ({ topCryptos }) => {
     labels: topCryptos.map((coin) => coin.name),
     datasets: [
       {
-        label: "# of Votes",
-        data: topCryptos.map((coin) => coin?.marketCap),
+        label: "Price in USD",
+        data: topCryptos.map((coin) => coin?.price),
         backgroundColor: topCryptos.map((coin) => coin.color),
         borderColor: topCryptos.map((coin) => coin.color),
         borderWidth: 1,
