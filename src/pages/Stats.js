@@ -3,27 +3,17 @@ import { Typography, Button } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import BarChart from "../components/BarChart";
-import LineChart from "../components/LineChart";
-import DoughnutChart from "../components/DoughnutChart";
-import DoughnutChartCard from "../components/DoughnutChartCard";
+
 import PieChart from "../components/PieChart";
 import "./Stats.css";
 import TopPerformers from "../components/TopPerformers";
 import PriceCard from "../components/PriceCard";
 import stats from "../Assets/stats.svg";
 import { Link } from "react-router-dom";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
-import InboxIcon from "@mui/icons-material/Inbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
-import Avatar from "@mui/material/Avatar";
+
 import millify from "millify";
 import { Container } from "@mui/material";
-import { BottomNavigation } from "@mui/material";
+
 
 const Stats = ({ topCryptos, globalStats }) => {
   console.log(topCryptos);

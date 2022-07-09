@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import HTMLReactParser from "html-react-parser";
 import CryptoCard from "../components/CryptoCard";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { Link } from "react-router-dom";

@@ -5,12 +5,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import hero from "../Assets/Cryptocurrency_SVG.svg";
 import rocket from "../Assets/Startup_SVG.svg";
-import news from "../Assets/Search_SVG.svg";
 import TopPerformers from "../components/TopPerformers";
-import BarChart from "../components/BarChart";
-import LineChart from "../components/LineChart";
-import DoughnutChart from "../components/DoughnutChart";
-import PieChart from "../components/PieChart";
 import NewsCard from "../components/NewsCard";
 import { Link } from "react-router-dom";
 
