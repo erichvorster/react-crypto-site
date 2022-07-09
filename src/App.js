@@ -10,6 +10,7 @@ import CryptoInfo from "./components/CryptoInfo";
 import Subscribe from "./pages/Subscribe";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import axios from "axios";
 
 //Fetching Crypto coins
 function App() {
@@ -21,65 +22,80 @@ function App() {
 
   console.log(topCryptos);
 
-  const key = `/.netlify/functions/api`;
-
   //TopCryptos
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": key,
-        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-      },
+    const fetchData = async () => {
+      const results = await axios.get(`/.netlify/functions/api`);
+      console.log(results);
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": results.data.key,
+          "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+        },
+      };
+
+      fetch(
+        "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=10&offset=0",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          setTopCryptos(response.data.coins);
+          setTopFive(response.data.coins.slice(0, 3));
+        });
     };
 
-    fetch(
-      "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=10&offset=0",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        setTopCryptos(response.data.coins);
-        setTopFive(response.data.coins.slice(0, 3));
-      });
+    fetchData();
   }, []);
 
   //All Cryptos
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": key,
-        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-      },
+    const fetchData = async () => {
+      const results = await axios.get(`/.netlify/functions/api`);
+
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": results.data.key,
+          "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+        },
+      };
+
+      fetch(
+        "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=100&offset=0",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setAllCryptos(response.data.coins));
     };
 
-    fetch(
-      "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=100&offset=0",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setAllCryptos(response.data.coins));
+    fetchData();
   }, []);
 
   //CryptoNews
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-BingApis-SDK": "true",
-        "X-RapidAPI-Key": key,
-        "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
-      },
-    };
+    const fetchData = async () => {
+      const results = await axios.get(`/.netlify/functions/api`);
 
-    fetch(
-      "https://bing-news-search1.p.rapidapi.com/news/search?q={cryptocurrency}&freshness=Day&textFormat=Raw&safeSearch=Off",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setCryptoNews(response.value))
-      .catch((err) => console.error(err));
+      const options = {
+        method: "GET",
+        headers: {
+          "X-BingApis-SDK": "true",
+          "X-RapidAPI-Key": results.data.key,
+          "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
+        },
+      };
+
+      fetch(
+        "https://bing-news-search1.p.rapidapi.com/news/search?q={cryptocurrency}&freshness=Day&textFormat=Raw&safeSearch=Off",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setCryptoNews(response.value))
+        .catch((err) => console.error(err));
+    };
+    fetchData();
   }, []);
 
   // useEffect(() => {
@@ -101,21 +117,26 @@ function App() {
   // }, []);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": key,
-        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-      },
-    };
+    const fetchData = async () => {
+      const results = await axios.get(`/.netlify/functions/api`);
 
-    fetch(
-      "https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setGlobalStats(response))
-      .catch((err) => console.error(err));
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": results.data.key,
+          "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+        },
+      };
+
+      fetch(
+        "https://coinranking1.p.rapidapi.com/stats?referenceCurrencyUuid=yhjMzLPhuIDl",
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setGlobalStats(response))
+        .catch((err) => console.error(err));
+    };
+    fetchData();
   }, []);
 
   return (
