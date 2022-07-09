@@ -35,7 +35,7 @@ const Coins = ({ allCryptos, setAllCryptos }) => {
           justifyContent: "center",
           "& > :not(style)": { m: 1, width: "60ch" },
           position: "relative",
-          paddingTop: 8,
+          paddingTop: 18,
         }}
         noValidate
         autoComplete="off"
@@ -68,7 +68,7 @@ const Coins = ({ allCryptos, setAllCryptos }) => {
           variant="outlined"
           sx={{
             position: "absolute",
-            top: { xs: 335, sm: 270 },
+            top: { xs: 415, sm: 350 },
             backgroundColor: "var(--white)",
             borderRadius: 1,
             zIndex: 1,

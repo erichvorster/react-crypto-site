@@ -65,7 +65,7 @@ const Footer = () => {
             style={{
               fontSize: "32px",
               color: "var(--lightBlue)",
-              paddingRight: 8,
+              paddingRight: 15,
               cursor: "pointer",
             }}
           />
@@ -73,7 +73,7 @@ const Footer = () => {
             style={{
               fontSize: "32px",
               color: "var(--lightBlue)",
-              paddingRight: 8,
+              paddingRight: 15,
               cursor: "pointer",
             }}
           />
@@ -81,7 +81,7 @@ const Footer = () => {
             style={{
               fontSize: "32px",
               color: "var(--lightBlue)",
-              paddingRight: 8,
+              paddingRight: 15,
               cursor: "pointer",
             }}
           />

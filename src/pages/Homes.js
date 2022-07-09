@@ -20,7 +20,7 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
       {/* Home hero */}
       <Box
         className="home__container container "
-        sx={{ backgroundColor: "var(--darkBlue)" }}
+        sx={{ backgroundColor: "var(--darkBlue)", paddingTop: 10 }}
       >
         <Container>
           <Grid container spacing={1}>
@@ -432,7 +432,7 @@ News */}
                   sx={{
                     fontWeight: 600,
                     maxWidth: 500,
-                    color: "var(--lightBlue)",
+                    color: "var(--white)",
                   }}
                   className="home__title"
                 >

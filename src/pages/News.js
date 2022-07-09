@@ -14,7 +14,12 @@ const News = ({ cryptoNews }) => {
     <>
       <Box
         container
-        sx={{ backgroundColor: "var(--darkBlue)", color: "white", padding: 5 }}
+        sx={{
+          backgroundColor: "var(--darkBlue)",
+          color: "white",
+          padding: 5,
+          paddingTop: 10,
+        }}
       >
         <Box sx={{ maxWidth: 400, margin: "0 auto" }}>
           <Typography

@@ -29,7 +29,7 @@ const Stats = ({ topCryptos, globalStats }) => {
   console.log(topCryptos);
 
   return (
-    <Box sx={{ margin: "0 auto" }}>
+    <Box sx={{ margin: "0 auto", paddingTop: 10 }}>
       {/* Stats hero */}
       <Box sx={{ backgroundColor: "var(--darkBlue)" }}>
         <Container>

@@ -21,12 +21,14 @@ function App() {
 
   console.log(topCryptos);
 
+  const key = `/.netlify/functions/api`;
+
   //TopCryptos
   useEffect(() => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": key,
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -47,7 +49,7 @@ function App() {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": key,
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };
@@ -66,7 +68,7 @@ function App() {
       method: "GET",
       headers: {
         "X-BingApis-SDK": "true",
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": key,
         "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
       },
     };
@@ -80,29 +82,29 @@ function App() {
       .catch((err) => console.error(err));
   }, []);
 
+  // useEffect(() => {
+  //   const options = {
+  //     method: "GET",
+  //     headers: {
+  //       "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+  //       "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+  //     },
+  //   };
+
+  //   fetch(
+  //     "https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h",
+  //     options
+  //   )
+  //     .then((response) => response.json())
+  //     .then((response) => console.log(response))
+  //     .catch((err) => console.error(err));
+  // }, []);
+
   useEffect(() => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
-        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-      },
-    };
-
-    fetch(
-      "https://coinranking1.p.rapidapi.com/coin/Qwsogvtv82FCd?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
-  }, []);
-
-  useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
+        "X-RapidAPI-Key": key,
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
     };

@@ -6,13 +6,25 @@ import "./Nav.css";
 
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false);
+  const [navScroll, setNavScroll] = useState(false);
+
+  const changeNavColor = () => {
+    if (window.scrollY >= 80) {
+      setNavScroll(true);
+    } else {
+      setNavScroll(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeNavColor);
+
   return (
-    <nav className="navbar">
+    <nav className={navScroll ? "navbar-active" : "navbar"}>
       <div className="container-fluid">
         <div className="logo">
           <img src={logo} />
         </div>
-        <ul class={navOpen ? "nav-links nav-active" : "nav-links"}>
+        <ul className={navOpen ? "nav-links nav-active" : "nav-links"}>
           <li>
             <Link
               className="link switch"
@@ -72,9 +84,9 @@ const Nav = () => {
             setNavOpen(!navOpen);
           }}
         >
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
+          <div className={navOpen ? "line1" : ""}></div>
+          <div className={navOpen ? "line2" : ""}></div>
+          <div className={navOpen ? "line3" : ""}></div>
         </div>
       </div>
     </nav>

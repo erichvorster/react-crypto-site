@@ -34,6 +34,7 @@ const CryptoInfo = () => {
   const [timePeriod, setTimePeriod] = useState("7d");
   const [coinInfo, setCoinInfo] = useState();
 
+  console.log(coinInfo);
   //Selector configuration
 
   const handleChange = (event) => {
@@ -74,8 +75,8 @@ const CryptoInfo = () => {
       icon: <NumberOutlined style={{ color: coinInfo?.color }} />,
     },
     {
-      title: "24h Volume",
-      value: `$ ${coinInfo?.volume && millify(coinInfo?.volume)}`,
+      title: "Price Change",
+      value: ` ${coinInfo?.change && millify(coinInfo?.change)}`,
       icon: <ThunderboltOutlined style={{ color: coinInfo?.color }} />,
     },
     {
@@ -128,6 +129,7 @@ const CryptoInfo = () => {
         backgroundColor: "var(--darkBlue)",
         paddingBottom: 10,
         paddingLeft: 2,
+        paddingTop: 10,
       }}
     >
       <Box
@@ -173,7 +175,7 @@ const CryptoInfo = () => {
         >
           <Grid item xs={12} sx={{ marginLeft: 4 }}>
             <Button variant="outlined">
-              <Link to="/coins">
+              <Link to="/coins" style={{ textDecoration: "none" }}>
                 <Typography
                   variant="body1"
                   sx={{ textDecoration: "none", color: "var(--lightBlue)" }}

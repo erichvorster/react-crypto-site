@@ -1,3 +1,14 @@
+body::-webkit-scrollbar {
+  background-color:var(--darkBlue);
+  width: 4px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color:var(--lightBlue);
+  width: 4px;
+  border-radius: 20px;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +47,4 @@
     transform: rotate(360deg);
   }
 }
+
