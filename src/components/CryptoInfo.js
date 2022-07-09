@@ -28,6 +28,7 @@ import DoughnutChart from "./DoughnutChart";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { DoubleLeftOutlined } from "@ant-design/icons";
+import axios from "axios";
 
 const CryptoInfo = () => {
   const { coinId } = useParams();
@@ -44,21 +45,26 @@ const CryptoInfo = () => {
   console.log(coinInfo);
 
   useEffect(() => {
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "1238215840msh86bee828410a6fep1520e3jsnbd184877cf3e",
-        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-      },
-    };
+    const fetchData = async () => {
+      const results = await axios.get(`/.netlify/functions/api`);
+      console.log(results);
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": results.data.key,
+          "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+        },
+      };
 
-    fetch(
-      `https://coinranking1.p.rapidapi.com/coin/${coinId}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setCoinInfo(response?.data?.coin))
-      .catch((err) => console.error(err));
+      fetch(
+        `https://coinranking1.p.rapidapi.com/coin/${coinId}?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=${timePeriod}`,
+        options
+      )
+        .then((response) => response.json())
+        .then((response) => setCoinInfo(response?.data?.coin))
+        .catch((err) => console.error(err));
+    };
+    fetchData();
   }, [timePeriod]);
 
   const time = ["3h", "24h", "7d", "30d", "1y", "3m", "3y", "5y"];
