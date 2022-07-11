@@ -377,7 +377,7 @@ News */}
                   sx={{
                     color: "var(--white)",
                     marginRight: { md: 2 },
-                    paddingLeft: { xs: 2, sm: 8, md: 10, lg: 12, xl: 30 },
+                    paddingLeft: { xs: 2, sm: 8, md: 10, lg: 12, xl: 15 },
                     paddingRight: { xs: 2 },
                     marginTop: { xs: 10, md: 20 },
                   }}
