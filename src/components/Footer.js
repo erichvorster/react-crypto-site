@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import { TwitterOutlined } from "@ant-design/icons";
 import { InstagramOutlined } from "@ant-design/icons";
@@ -13,79 +13,98 @@ const Footer = () => {
         sx={{
           height: "20vh",
           display: "flex",
-          justifyContent: "space-around",
           backgroundColor: "var(--blue)",
           alignItems: "center",
         }}
       >
-        <Box component="img" src={logo} sx={{ height: 40, width: 40 }}></Box>
-        <Box
-          sx={{ width: "30%", display: "flex", justifyContent: "space-around" }}
-        >
-          <Link
-            className="link switch"
-            to="/"
-            style={{ textDecoration: "none" }}
-          >
-            Home
-          </Link>
-          <Link
-            className="link switch"
-            to="/coins"
-            style={{ textDecoration: "none" }}
-          >
-            Coins
-          </Link>
-          <Link
-            className="link switch"
-            to="/stats"
-            style={{ textDecoration: "none" }}
-          >
-            Stats
-          </Link>
-          <Link
-            className="link switch"
-            to="/news"
-            style={{ textDecoration: "none" }}
-          >
-            News
-          </Link>
-          <Link
-            className="link switch"
-            to="/subscribe"
-            style={{ textDecoration: "none" }}
-          >
-            Subscribe
-          </Link>
-        </Box>
-        <Box
-          sx={{ width: "5%", display: "flex", justifyContent: "space-around" }}
-        >
-          <TwitterOutlined
-            style={{
-              fontSize: "32px",
-              color: "var(--lightBlue)",
-              paddingRight: 15,
-              cursor: "pointer",
+        <Grid container spacing={2}>
+          <Grid
+            item
+            xs={2}
+            md={3}
+            sx={{
+              textAlign: "center",
             }}
-          />
-          <InstagramOutlined
-            style={{
-              fontSize: "32px",
-              color: "var(--lightBlue)",
-              paddingRight: 15,
-              cursor: "pointer",
+          >
+            <Box
+              component="img"
+              src={logo}
+              sx={{ height: 40, width: 40 }}
+            ></Box>
+          </Grid>
+          <Grid
+            item
+            xs={10}
+            md={6}
+            sx={{
+              textAlign: "center",
+              width: 200,
+              display: "flex",
+              width: 200,
+              justifyContent: "space-around",
+              marginTop: 1,
             }}
-          />
-          <FacebookOutlined
-            style={{
-              fontSize: "32px",
-              color: "var(--lightBlue)",
-              paddingRight: 15,
-              cursor: "pointer",
-            }}
-          />
-        </Box>
+          >
+            <Link
+              to="/"
+              style={{ textDecoration: "none", color: "var(--lightBlue)" }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/coins"
+              style={{ textDecoration: "none", color: "var(--lightBlue)" }}
+            >
+              Coins
+            </Link>
+            <Link
+              to="/stats"
+              style={{ textDecoration: "none", color: "var(--lightBlue)" }}
+            >
+              Stats
+            </Link>
+            <Link
+              to="/news"
+              style={{ textDecoration: "none", color: "var(--lightBlue)" }}
+            >
+              News
+            </Link>
+            <Link
+              to="/subscribe"
+              style={{ textDecoration: "none", color: "var(--lightBlue)" }}
+            >
+              Subscribe
+            </Link>
+          </Grid>
+          <Grid item xs={12} md={3}>
+            <Box sx={{ textAlign: "center" }}>
+              <TwitterOutlined
+                style={{
+                  fontSize: "32px",
+                  color: "var(--lightBlue)",
+                  paddingRight: 15,
+                  cursor: "pointer",
+                }}
+              />
+              <InstagramOutlined
+                style={{
+                  fontSize: "32px",
+                  color: "var(--lightBlue)",
+                  paddingRight: 15,
+                  cursor: "pointer",
+                }}
+              />
+              <FacebookOutlined
+                style={{
+                  fontSize: "32px",
+                  color: "var(--lightBlue)",
+                  paddingRight: 15,
+                  cursor: "pointer",
+                }}
+              />
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
     </>
   );
