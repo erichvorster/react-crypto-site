@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import millify from "millify";
 import { Container } from "@mui/material";
 
-
 const Stats = ({ topCryptos, globalStats }) => {
   console.log(topCryptos);
 
@@ -65,9 +64,9 @@ const Stats = ({ topCryptos, globalStats }) => {
             </Grid>
             <Grid item xs={12} md={5}>
               <Box
-                sx={{ padding: 10, textAlign: { xs: "center", md: "start" } }}
+                sx={{ padding: 7, textAlign: { xs: "center", md: "start" } }}
               >
-                <Box component="img" src={stats} sx={{ maxWidth: 300 }}></Box>
+                <Box component="img" src={stats} sx={{ maxWidth: 400 }}></Box>
               </Box>
             </Grid>
           </Grid>
@@ -108,6 +107,7 @@ const Stats = ({ topCryptos, globalStats }) => {
             sx={{
               color: "var(--lightBlue)",
               textAlign: "center",
+              maxWidth: { xs: 370 },
             }}
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt id
@@ -157,7 +157,7 @@ const Stats = ({ topCryptos, globalStats }) => {
               >
                 <Box
                   sx={{
-                    height: { xs: 120, md: 150, lg: 200 },
+                    height: { xs: 100, md: 130, lg: 180 },
                     width: "auto",
                     backgroundColor: "var(--darkBlue)",
                     borderRadius: 3,
@@ -188,7 +188,7 @@ const Stats = ({ topCryptos, globalStats }) => {
               >
                 <Box
                   sx={{
-                    height: { xs: 160, md: 190, lg: 240 },
+                    height: { xs: 140, md: 170, lg: 220 },
                     width: "auto",
                     backgroundColor: "var(--darkBlue)",
                     borderRadius: 3,
@@ -219,7 +219,7 @@ const Stats = ({ topCryptos, globalStats }) => {
               >
                 <Box
                   sx={{
-                    height: { xs: 80, md: 110, lg: 160 },
+                    height: { xs: 60, md: 90, lg: 140 },
                     width: "auto",
                     backgroundColor: "var(--darkBlue)",
                     borderRadius: 3,
@@ -418,7 +418,7 @@ const Stats = ({ topCryptos, globalStats }) => {
             >
               <Box
                 sx={{
-                  height: { xs: 120, md: 150, lg: 200 },
+                  height: { xs: 100, md: 130, lg: 180 },
                   width: "auto",
                   backgroundColor: "var(--white)",
                   borderRadius: 5,
@@ -453,7 +453,7 @@ const Stats = ({ topCryptos, globalStats }) => {
             >
               <Box
                 sx={{
-                  height: { xs: 160, md: 190, lg: 240 },
+                  height: { xs: 140, md: 170, lg: 220 },
                   width: "auto",
                   backgroundColor: "var(--white)",
                   borderRadius: 5,
@@ -488,7 +488,7 @@ const Stats = ({ topCryptos, globalStats }) => {
             >
               <Box
                 sx={{
-                  height: { xs: 120, md: 150, lg: 200 },
+                  height: { xs: 100, md: 130, lg: 180 },
                   width: "auto",
                   backgroundColor: "var(--white)",
                   borderRadius: 5,
@@ -545,31 +545,31 @@ const Stats = ({ topCryptos, globalStats }) => {
           >
             <Grid item xs={6} md={4} lg={2} sx={{ textAlign: "center" }}>
               <Typography variant="h6">Total 24h Volume</Typography>
-              <Typography variant="h2">
+              <Typography variant="h4">
                 {millify(globalStats?.data?.total24hVolume)}
               </Typography>
             </Grid>
             <Grid item xs={6} md={4} lg={2} sx={{ textAlign: "center" }}>
               <Typography variant="h6">Total coins</Typography>
-              <Typography variant="h2">
+              <Typography variant="h4">
                 {millify(globalStats?.data?.totalCoins)}
               </Typography>
             </Grid>
             <Grid item xs={6} md={4} lg={2} sx={{ textAlign: "center" }}>
               <Typography variant="h6">Total Exchanges</Typography>
-              <Typography variant="h2">
+              <Typography variant="h4">
                 {millify(globalStats?.data?.totalExchanges)}
               </Typography>
             </Grid>
             <Grid item xs={6} md={4} lg={2} sx={{ textAlign: "center" }}>
               <Typography variant="h6">Total market cap</Typography>
-              <Typography variant="h2">
+              <Typography variant="h4">
                 {millify(globalStats?.data?.totalMarketCap)}
               </Typography>
             </Grid>
             <Grid item xs={6} md={4} lg={2} sx={{ textAlign: "center" }}>
               <Typography variant="h6">Total Markets</Typography>
-              <Typography variant="h2">
+              <Typography variant="h4">
                 {millify(globalStats?.data?.totalMarkets)}
               </Typography>
             </Grid>

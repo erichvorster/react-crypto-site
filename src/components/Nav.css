@@ -44,8 +44,8 @@
   justify-content: center;
   align-items: center;
   min-height: 10vh;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
   background-color: var(--darkBlue);
   position: fixed;
   width:100%;
@@ -58,8 +58,8 @@
   justify-content: center;
   align-items: center;
   min-height: 10vh;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
   background-color: var(--white);
   position: fixed;
   width:100%;

@@ -79,9 +79,9 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
                   marginLeft: { md: 10 },
                   mb: { xs: 10, sm: 20 },
                   mr: { md: 8 },
-                  px: { xs: 2 },
+                  px: { xs: 4 },
                 }}
-                alt="The house from the offer."
+                alt="Cryptocurrency"
                 src={hero}
               />
             </Grid>
@@ -177,6 +177,7 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
                   maxWidth: { xs: 400, md: 350, lg: 400 },
                   marginTop: { sm: 5, md: 5 },
                   marginLeft: { md: 8 },
+                  px: { xs: 4 },
                 }}
                 alt="The house from the offer."
                 src={rocket}
@@ -256,7 +257,7 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
                 aspernatur voluptate!
               </Typography>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "center", px: { xs: 4 } }}>
               <Link
                 key={globalStats?.data?.bestCoins[1]?.uuid}
                 to={`/crypto/${globalStats?.data?.bestCoins[1]?.uuid}`}
@@ -264,7 +265,7 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
               >
                 <Box
                   sx={{
-                    height: { xs: 120, md: 150, lg: 200 },
+                    height: { xs: 100, md: 130, lg: 180 },
                     width: "auto",
                     backgroundColor: "var(--darkBlue)",
                     borderRadius: 3,
@@ -295,7 +296,7 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
               >
                 <Box
                   sx={{
-                    height: { xs: 160, md: 190, lg: 240 },
+                    height: { xs: 140, md: 170, lg: 220 },
                     width: "auto",
                     backgroundColor: "var(--darkBlue)",
                     borderRadius: 3,
@@ -326,7 +327,7 @@ const Homes = ({ topCryptos, cryptoNews, globalStats, topFive }) => {
               >
                 <Box
                   sx={{
-                    height: { xs: 80, md: 110, lg: 160 },
+                    height: { xs: 60, md: 90, lg: 140 },
                     width: "auto",
                     backgroundColor: "var(--darkBlue)",
                     borderRadius: 3,

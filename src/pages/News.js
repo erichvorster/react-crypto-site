@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 
 import Grid from "@mui/material/Grid";
 import NewsCard from "../components/NewsCard";
-import {  Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { Button, Container } from "@mui/material";
 import "./News.css";
 
@@ -41,8 +41,6 @@ const News = ({ cryptoNews }) => {
             container
             sx={{
               paddingTop: 5,
-              paddingLeft: { xs: 1 },
-              paddingRight: { xs: 1 },
             }}
           >
             <Grid item xs={12} lg={3}>

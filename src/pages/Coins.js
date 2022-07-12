@@ -72,7 +72,7 @@ const Coins = ({ allCryptos, setAllCryptos }) => {
             borderRadius: 1,
             zIndex: 1,
             boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
-            maxWidth: { xs: 400, sm: 700, md: 1000 },
+            maxWidth: { xs: 350, sm: 700, md: 1000 },
           }}
         />
       </Box>
