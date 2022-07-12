@@ -26,7 +26,7 @@ function TopPerformers({ topCryptos }) {
   return (
     <TableContainer
       component={Paper}
-      sx={{ maxWidth: { xs: 370, sm: 600, md: 700, lg: 900 } }}
+      sx={{ width: { xs: 370, sm: 600, md: 700, lg: 900 } }}
     >
       <Table aria-label="simple table">
         <TableHead>
